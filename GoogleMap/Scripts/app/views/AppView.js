@@ -8,19 +8,29 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
     mapCanvas: "#map-canvas"
   },
 
-  initialize: function (options) {    
-    google.maps.event.addDomListener(window, 'load', this.showMap);
+  initialize: function (options) {
+      google.maps.event.addDomListener(window, 'load', this.showMap);
   },
 
   showMap: function () {
-    var map_canvas = this.$('#map_canvas');
-    console.log(map_canvas);
-    var map_options = {
-      center: new google.maps.LatLng(44.5403, -78.5463),
-      zoom: 8,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(this.$('#map_canvas')[0], map_options);
+      var map_canvas = $('#map_canvas');
+      var map_options = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 3,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeControl: false,
+          panControl: true,
+          panControlOptions: {
+              position: google.maps.ControlPosition.RIGHT_BOTTOM
+          },
+          zoomTypeControl: true,
+          zoomControlOptions: {
+              style: google.maps.ZoomControlStyle.LARGE,
+              position: google.maps.ControlPosition.RIGHT_BOTTOM
+          }
+      }
+      var map = new google.maps.Map(map_canvas[0], map_options);
+      console.log(map);
   },
 
   onRender: function () {

@@ -5,10 +5,7 @@ using Cassette.Stylesheets;
 
 namespace GoogleMap
 {
-    /// <summary>
-    /// Configures the Cassette asset bundles for the web application.
-    /// </summary>
-    public class CassetteBundleConfiguration : IConfiguration<BundleCollection>
+    public class CassetteConfiguration : IConfiguration<BundleCollection>
     {
         public void Configure(BundleCollection bundles)
         {
@@ -22,7 +19,7 @@ namespace GoogleMap
             bundles.Add<StylesheetBundle>("Content/style.less");
             bundles.Add<StylesheetBundle>("Content/css/font-awesome.css");
             bundles.Add<ScriptBundle>("Scripts/jquery-2.0.3.js");
-            bundles.Add<ScriptBundle>("Scripts/jquery-ui-1.8.24.min.js");
+            bundles.Add<ScriptBundle>("Scripts/jquery-ui-1.10.3.min.js");
             bundles.Add<ScriptBundle>("Scripts/underscore.js");
             bundles.Add<ScriptBundle>("Scripts/backbone.js");
             bundles.Add<ScriptBundle>("Scripts/backbone.marionette.js");
