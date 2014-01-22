@@ -1,0 +1,48 @@
+﻿@using GoogleMap.Controllers
+@model dynamic
+@{
+    Bundles.Reference("content/style.less");
+    Bundles.Reference("content/css/font-awesome.css");
+    Bundles.Reference("scripts/base.js");
+    Bundles.Reference("scripts/app/controllers");
+    Bundles.Reference("scripts/app/collections");
+    Bundles.Reference("scripts/app/mixins");
+    Bundles.Reference("scripts/app/models");
+    Bundles.Reference("scripts/app/regions");
+    Bundles.Reference("scripts/app/routers");
+    Bundles.Reference("scripts/app/views");
+    Bundles.Reference("scripts/app/GMap.js");
+    Bundles.Reference("scripts/app/templates");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GoogleMap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      @Bundles.RenderStylesheets()
+    <link rel="shortcut icon" href="~/Content/icons/favicon.ico">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  </head>
+
+  <body>
+      <div>
+          <div id="modal-container"></div>
+          <div id="app-view"></div>
+      </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @Bundles.RenderScripts()
+    @Bundles.RenderHtmlTemplates()
+    
+    <script>
+      jQuery(document).ready(function ($) {
+        GMap.App.start();
+      });
+    </script>
+  </body>
+</html>
