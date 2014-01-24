@@ -6,8 +6,7 @@ GMap.Routers.MapRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    this.appView = new GMap.Views.AppView({
-    });
+    this.appView = new GMap.Views.AppView();
     GMap.App.appRegion.show(this.appView);
   },
 

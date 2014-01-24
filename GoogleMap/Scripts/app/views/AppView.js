@@ -30,7 +30,6 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
           }
       }
       var map = new google.maps.Map(map_canvas[0], map_options);
-      console.log(map);
   },
 
   onRender: function () {
