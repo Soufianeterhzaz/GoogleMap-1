@@ -160,6 +160,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIControllers\AddressController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -249,6 +250,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\collections\AddressList.js" />
+    <Content Include="Scripts\app\models\Address.js" />
     <Content Include="Scripts\app\GMap.js" />
     <Content Include="Scripts\app\routers\MapRouter.js" />
     <Content Include="Scripts\app\templates\app-view-template.htm" />
@@ -370,13 +373,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="APIControllers\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\collections\" />
     <Folder Include="Scripts\app\controllers\" />
     <Folder Include="Scripts\app\mixins\" />
-    <Folder Include="Scripts\app\models\" />
     <Folder Include="Scripts\app\regions\" />
   </ItemGroup>
   <ItemGroup>
