@@ -9,7 +9,10 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
   },
 
   initialize: function (options) {
-      google.maps.event.addDomListener(window, 'load', this.showMap);
+    this.collection = options.collection;
+    this.collection.fetch();
+
+    google.maps.event.addDomListener(window, 'load', this.showMap);
   },
 
   showMap: function () {
