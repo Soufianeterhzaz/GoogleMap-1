@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using GoogleMap.Models;
+using System.Web.Script.Serialization;
 
 namespace GoogleMap.APIControllers
 {
@@ -15,11 +17,26 @@ namespace GoogleMap.APIControllers
         public object Get()
         {
             WebClient wc = new WebClient();
-            string address = wc.DownloadString(new Uri("http://maps.googleapis.com/maps/api/geocode/json?address=1600 Amphitheatre Parkway, Mountain+View, CA&sensor=false"));
+            Address address = new JavaScriptSerializer().Deserialize<Address>(wc.DownloadString(new Uri("http://maps.googleapis.com/maps/api/geocode/json?address=cooks road&sensor=false")));
+
+            IList<dynamic> _geoCodes = new List<dynamic>();
+
+            int count = 1;
+            foreach (var geoCode in address.results)
+            {
+                _geoCodes.Add(new
+                {
+                    Id = count.ToString(),
+                    FormattedAddress = geoCode.formatted_address,
+                    Lat = geoCode.geometry.location.lat,
+                    Lng = geoCode.geometry.location.lng
+                });
+                count++;
+            }
+
             return new
             {
-                //Results = results,
-                Count = 0
+                Results = _geoCodes
             };
         }
 

@@ -3,9 +3,9 @@
 GMap.Models.Address = Backbone.Model.extend({
   idAttribute: 'Id',
   defaults: {
-    "Id": null
-  },
-
-  initialize: function () {
+    "Id": null,
+    "FormattedAddress": null,
+    "Lat": null,
+    "Lng": null
   }
 });
