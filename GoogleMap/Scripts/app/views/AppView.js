@@ -5,7 +5,8 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
   className: 'main-container',
 
   regions: {
-    mapCanvas: "#map-canvas"
+    mapCanvas: '#map-canvas',
+    addressBox: '#address-box'
   },
 
   initialize: function (options) {
@@ -21,7 +22,7 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
   },
 
   showMap: function () {
-    var map_canvas = $('#map_canvas');
+    var map_canvas = $('#map-canvas');
     var map_options = {
       center: new google.maps.LatLng(44.5403, -78.5463),
       zoom: 3,
@@ -48,5 +49,7 @@ GMap.Views.AppView = Backbone.Marionette.Layout.extend({
   },
 
   onRender: function () {
+    this.addressBox.show(new GMap.Views.AddressView({      
+    }));
   }
 });

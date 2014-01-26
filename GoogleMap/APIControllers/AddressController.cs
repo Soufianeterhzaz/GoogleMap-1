@@ -17,7 +17,7 @@ namespace GoogleMap.APIControllers
         public object Get()
         {
             WebClient wc = new WebClient();
-            Address address = new JavaScriptSerializer().Deserialize<Address>(wc.DownloadString(new Uri("http://maps.googleapis.com/maps/api/geocode/json?address=cooks road&sensor=false")));
+            Address address = new JavaScriptSerializer().Deserialize<Address>(wc.DownloadString(new Uri("http://maps.googleapis.com/maps/api/geocode/json?address=Washington&sensor=false")));
 
             IList<dynamic> _geoCodes = new List<dynamic>();
 

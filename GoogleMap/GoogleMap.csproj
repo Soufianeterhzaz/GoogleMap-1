@@ -256,7 +256,9 @@
     <Content Include="Scripts\app\models\Address.js" />
     <Content Include="Scripts\app\GMap.js" />
     <Content Include="Scripts\app\routers\MapRouter.js" />
+    <Content Include="Scripts\app\templates\address-view-template.htm" />
     <Content Include="Scripts\app\templates\app-view-template.htm" />
+    <Content Include="Scripts\app\views\AddressView.js" />
     <Content Include="Scripts\app\views\AppView.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.marionette.js" />
